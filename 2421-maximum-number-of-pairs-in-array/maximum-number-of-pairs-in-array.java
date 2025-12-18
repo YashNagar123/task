@@ -1,0 +1,19 @@
+class Solution {
+    public int[] numberOfPairs(int[] nums) {
+
+        int pair =0; 
+        int n = nums.length;
+
+        Arrays.sort(nums);
+
+        for(int i = 0;i<n-1;){
+            if(nums[i] == nums[i+1]){
+                pair++;
+                i += 2;
+            }else i++;
+        }
+
+        return new int[]{pair , (n - (2*pair))};
+        
+    }
+}
