@@ -16,6 +16,6 @@ public class Solution extends VersionControl {
         else s = m + 1;
       }
 
-      return s; // or l
+      return s; // when s == l then they points to first bad version
     }
 }
