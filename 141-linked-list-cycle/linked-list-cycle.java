@@ -12,18 +12,17 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
 
-        if(head == null) return false;
-        
-        ListNode fast = head;
-        ListNode slow = head;
+       HashSet<ListNode> set = new HashSet<>();
 
-        while(fast != null && fast.next != null){
+        ListNode temp = head;
 
-            fast = fast.next.next;
-            slow = slow.next;
+        while(temp != null){
 
-            //if list is cyclic then fast will catch slow
-            if(fast == slow) return true;
+            if(set.contains(temp)) return true;
+            else {
+                set.add(temp);
+                temp = temp.next;
+            }
         }
 
         return false;
